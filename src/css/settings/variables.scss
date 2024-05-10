@@ -1,0 +1,36 @@
+html {
+    /* Colors */
+    --cw: #FDFDFD;
+    --ct: #0E0E0E;
+    --ct2: #636363;
+    --cy: #F6E54E;
+    --cy2: #FEF7D6;
+    --cy3: #F8E5A0;
+    --cy4: #E4D449;
+    --cbg: #F5F6F7;
+    --cbg2: #F0F0F0;
+    --cb: #A0BEF8;
+    --cb2: #D6DFFE;
+    --cb3: #4E91F6;
+    --cp2: #F8A0A0;
+    --cp: #FED6D6;
+    --cbor: #E1E1E1;
+
+    /* Parallax */
+    --parallax: 0.25125;
+    --direction: -1;
+
+    /* Fonts */
+    --shadow: 0 0.125em 0.750em 0 rgba(0, 0, 0, 0.18);
+    --shadow2: 0px 0px 1.313em 0px rgba(0, 0, 0, 0.10);
+    --shadownone: 0 0 0 0 rgba(0, 0, 0, 0);
+
+    /* Gradient */
+    --grad: linear-gradient(180deg, rgba(14, 14, 14, 0.32) 0%, rgba(14, 14, 14, 0.56) 100%, rgba(14, 14, 14, 0.72) 100%);
+    --grad2: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, rgba(14, 14, 14, 0.32) 100%);
+
+    /* Fonts */
+    --fr: "FixelDisplay-Regular";
+    --fm: "FixelDisplay-Medium";
+    --fs: "FixelDisplay-SemiBold";
+}

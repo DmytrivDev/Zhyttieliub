@@ -1,0 +1,26 @@
+/* Settings */
+@import url("./settings/default.scss");
+@import url("./settings/variables.scss");
+@import url("./settings/fonts.scss");
+@import url("./settings/general.scss");
+
+/* Header */
+@import url("./sections/header/header.scss");
+@import url("./sections/header/navigation.scss");
+
+/* Home */
+@import url("./sections/home/main.scss");
+@import url("./sections/home/infographick.scss");
+@import url("./sections/home/sertificated.scss");
+@import url("./sections/home/aboutfond.scss");
+@import url("./sections/home/projects.scss");
+@import url("./sections/elements/project.scss");
+@import url("./sections/home/supportus.scss");
+@import url("./sections/home/partnears.scss");
+@import url("./sections/home/latest.scss");
+@import url("./sections/elements/newsitem.scss");
+@import url("./sections/home/gallery.scss");
+@import url("./sections/home/contact.scss");
+
+/* Footer */
+@import url("./sections/footer/footer.scss");

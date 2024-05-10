@@ -1,0 +1,117 @@
+.section__gallery {
+    margin-top: 11rem;
+    overflow: hidden;
+}
+
+.gallery__container {
+    height: 120vh;
+    max-height: 80rem;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+}
+
+.gallery__column {
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &:nth-child(1),
+    &:nth-child(3) {
+        translate: 0 calc(var(--parallax) * (6.25rem * var(--direction) + 25rem));
+    }
+
+    &:nth-child(2),
+    &:nth-child(4) {
+        translate: 0 calc(var(--parallax) * (16.25rem * var(--direction) + 25rem));
+    }
+}
+
+.gallery__plate {
+    height: 30rem;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.gallery__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+
+    &::before {
+        width: 40rem;
+        height: 40rem;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(50% 50% at 50% 50%, #0e0e0e 0%, #636363 100%);
+        filter: blur(4rem);
+        opacity: 0.4;
+    }
+
+    .button {
+        margin-top: 2rem;
+        max-width: 20rem;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.gall__text {
+    width: 50.625rem;
+    transform: rotate(-8deg);
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 960px) {
+    .section__gallery {
+        margin-top: 9.12rem;
+    }
+    .gallery__container {
+        height: 38.875rem;
+        padding-top: 0;
+        gap: 0.5rem;
+        min-width: 54.25rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .gallery__column {
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+    .gallery__plate {
+        height: 19.8rem;
+        border-radius: 0.75rem;
+    }
+    .gallery__content {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .gallery__container {
+        transform: translateX(-58%);
+    }
+}

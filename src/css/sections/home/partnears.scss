@@ -1,0 +1,146 @@
+.section__partnears {
+    margin-top: 11rem;
+}
+
+.partnears__container {
+    padding-left: 7rem;
+}
+
+.partnears__content {
+    margin-top: 2.5rem;
+}
+
+.partnearsSlider {
+    display: flex;
+    flex-direction: column;
+
+    .splide__track {
+        overflow: visible;
+    }
+
+    .splide__arrows {
+        margin-top: 3rem;
+        gap: 1rem;
+        display: flex;
+        order: 1;
+
+        .splide__arrow {
+            width: 3rem;
+            height: 3rem;
+            background-size: 2rem !important;
+            transform: none;
+            border-radius: 50%;
+            opacity: 1 !important;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            background-color: transparent;
+
+            &:hover {
+                &::before {
+                    left: 0.2rem;
+                    right: 0.2rem;
+                    bottom: 0.2rem;
+                    top: 0.2rem;
+                    background-color: var(--cy2);
+                }
+            }
+
+            &:disabled {
+                &::before {
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: var(--cy2);
+                }
+            }
+
+            &::after {
+                width: 3rem;
+                height: 3rem;
+                background-size: 1.5rem;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                content: "";
+                position: absolute;
+                background-repeat: no-repeat;
+                background-position: center center;
+                display: block;
+            }
+
+            &::before {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                border-radius: 50%;
+                transition: 0.3s;
+                background-color: var(--cy);
+                position: absolute;
+                content: "";
+            }
+
+            &.splide__arrow--prev {
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='23' viewBox='0 0 24 23' fill='none'%3E%3Cpath d='M7.28525 11.3139H17.6562' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M9.70458 8.07589C9.70458 8.07589 6.82506 10.5077 6.82502 11.3137C6.82503 12.1198 9.70462 14.5515 9.70462 14.5515' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                }
+            }
+
+            &.splide__arrow--next {
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='23' viewBox='0 0 24 23' fill='none'%3E%3Cpath d='M16.7147 11.6861L6.34385 11.6861' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M14.2954 14.9241C14.2954 14.9241 17.1749 12.4923 17.175 11.6863C17.175 10.8802 14.2954 8.44849 14.2954 8.44849' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                }
+            }
+
+            svg {
+                display: none;
+            }
+        }
+    }
+}
+
+.partn__slide {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--cbg);
+    position: relative;
+
+    img {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .section__partnears {
+        margin-top: 8rem;
+    }
+    .partnears__container {
+        padding-left: 0;
+    }
+    .partnears__content {
+        margin-top: 1.5rem;
+    }
+    .partnearsSlider {
+        .splide__arrows {
+            margin-top: 2rem;
+            gap: 0.5rem;
+            .splide__arrow {
+                width: 2.75rem;
+                height: 2.75rem;
+                background-size: 1.75rem !important;
+            }
+        }
+    }
+
+    .partn__slide {
+        width: 6rem;
+        height: 6rem;
+    }
+}

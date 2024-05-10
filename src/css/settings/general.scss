@@ -1,0 +1,193 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: var(--fr);
+    color: var(--ct);
+    background-color: var(--cw);
+}
+
+.main {
+    padding-bottom: 11rem;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 90rem;
+    padding: 0 3.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+p {
+    color: var(--ct2);
+}
+
+.button {
+    padding: 1rem 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 4rem;
+    font-size: 1.125rem;
+    font-family: var(--fs);
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    &.yellow {
+        background-color: var(--cy);
+        color: var(--ct);
+    }
+
+    &.border {
+        border: 1px solid var(--ct);
+        color: var(--ct);
+    }
+
+    &.white {
+        background-color: var(--cw);
+        color: var(--ct);
+    }
+
+    &.withicon {
+        gap: 0.5rem;
+
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-top: -0.125rem;
+        }
+    }
+
+    &.witharrow {
+        padding-left: 1.5rem;
+        padding-right: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+        &:hover {
+            &::after {
+                background-position: 1.35rem -1.25rem;
+            }
+        }
+
+        &::after {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: .75rem 0 .75rem 0;
+            transition: 0.3s;
+            content: "";
+            background-position: 0 0;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%0A%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_62_5851)'%3E%3Cpath d='M14.1667 5.83325L5 14.9999' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M9.16602 5.10961C9.16602 5.10961 13.8606 4.71387 14.5731 5.42629C15.2855 6.13873 14.8897 10.8334 14.8897 10.8334' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M-6.83398 21.1096C-6.83398 21.1096 -2.1394 20.7139 -1.4269 21.4263C-0.714484 22.1387 -1.11032 26.8334 -1.11032 26.8334' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_62_5851'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        }
+    }
+}
+
+.section__upper {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    font-family: var(--fm);
+    color: var(--ct2);
+}
+
+h1 {
+    font-size: 7.5rem;
+    line-height: 6.5rem;
+    font-family: var(--fs);
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-family: var(--fs);
+}
+
+h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-family: var(--fs);
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: var(--fm);
+    margin: 0;
+}
+
+.section__simple {
+    padding-top: 8rem;
+}
+
+button {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font-size: 1.11vw;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    html {
+        font-size: 16px;
+    }
+    .overHideMob {
+        overflow: hidden;
+    }
+    .main {
+        padding-bottom: 6rem;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    p {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+    .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        &.witharrow {
+            padding: 1rem 1.5rem;
+        }
+    }
+    .section__upper {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+    h2 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-family: var(--fs);
+    }
+    h3 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .section__simple {
+        padding-top: 6rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 4.3vw;
+    }
+}

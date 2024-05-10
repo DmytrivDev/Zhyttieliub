@@ -1,0 +1,41 @@
+.section__latest {
+    margin-top: 11rem;
+}
+
+.latest__heading {
+    padding-bottom: 2.5em;
+    text-align: center;
+}
+
+.latest__list {
+    gap: 1rem;
+    row-gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
+
+@media screen and (max-width: 960px) {
+    .section__latest {
+        margin-top: 6rem;
+    }
+    .latest__heading {
+        padding-bottom: 1.5em;
+        text-align: left;
+    }
+    .latest__list {
+        row-gap: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+    .latest__list {
+        grid-template-columns: 1fr;
+        & > li {
+            &:nth-child(4) {
+                display: none;
+            }
+        }
+    }
+}
