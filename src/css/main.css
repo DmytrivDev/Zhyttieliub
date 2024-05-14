@@ -22,5 +22,16 @@
 @import url("./sections/home/gallery.scss");
 @import url("./sections/home/contact.scss");
 
+/* About */
+@import url("./sections/about/about.scss");
+@import url("./sections/about/mission.scss");
+@import url("./sections/about/foundators.scss");
+@import url("./sections/about/team.scss");
+@import url("./sections/about/reviews.scss");
+@import url("./sections/about/faq.scss");
+
+/* Projects */
+@import url("./sections/projects/projects.scss");
+
 /* Footer */
 @import url("./sections/footer/footer.scss");

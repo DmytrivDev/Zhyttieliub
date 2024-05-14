@@ -3,6 +3,7 @@ html {
     --cw: #FDFDFD;
     --ct: #0E0E0E;
     --ct2: #636363;
+    --ct3: #B6B6B6;
     --cy: #F6E54E;
     --cy2: #FEF7D6;
     --cy3: #F8E5A0;
@@ -23,11 +24,17 @@ html {
     /* Fonts */
     --shadow: 0 0.125em 0.750em 0 rgba(0, 0, 0, 0.18);
     --shadow2: 0px 0px 1.313em 0px rgba(0, 0, 0, 0.10);
+    --shadow3: 0 -0.125em 0.5em 0 rgba(0, 0, 0, 0.18);
     --shadownone: 0 0 0 0 rgba(0, 0, 0, 0);
 
     /* Gradient */
     --grad: linear-gradient(180deg, rgba(14, 14, 14, 0.32) 0%, rgba(14, 14, 14, 0.56) 100%, rgba(14, 14, 14, 0.72) 100%);
     --grad2: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, rgba(14, 14, 14, 0.32) 100%);
+    --grad3: 0 .125rem .75rem 0 rgba(0, 0, 0, 0.20);
+    --grady: linear-gradient(180deg, #F8E5A0 0%, #FEF7D6 100%);
+    --gradr: linear-gradient(180deg, #F8A0A0 0%, #FED6D6 100%);
+    --gradb: linear-gradient(180deg, #A0BEF8 0%, #D6DFFE 100%);
+
 
     /* Fonts */
     --fr: "FixelDisplay-Regular";

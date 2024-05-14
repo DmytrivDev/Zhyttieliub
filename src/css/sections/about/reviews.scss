@@ -1,0 +1,156 @@
+.section__reviews {
+    margin-top: 11rem;
+}
+
+.reviews__content {
+    margin-top: 2.5rem;
+}
+
+.reviews__item {
+    width: 27rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-right: 1rem;
+    border: 1px solid var(--cbor);
+    float: left;
+    * {
+        white-space: normal;
+    }
+}
+
+.reviews__scroll {
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.scroll {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+
+    &:hover {
+        & > div {
+            animation-play-state: paused !important;
+        }
+    }
+
+    & > div {
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        display: flex;
+        will-change: transform;
+    }
+}
+
+.token__scroll {
+    overflow: hidden;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+@keyframes animateR {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes animate2R {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.trviews__avatar {
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    padding-top: 0.25rem;
+    border-radius: 50%;
+    background-color: var(--cy2);
+
+    &.c2 {
+        background-color: var(--cp);
+    }
+
+    &.c3 {
+        background-color: var(--cb2);
+    }
+}
+
+.reviews__inform {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: var(--fm);
+}
+
+.reviews__dwsc {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--ct3);
+}
+
+.reviews__text {
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 960px) {
+    .section__reviews {
+        margin-top: 6rem;
+        h2 {
+            font-size: 1.95rem;
+        }
+    }
+    .reviews__content {
+        margin-top: 1.5rem;
+    }
+    .reviews__item {
+        width: 21.5rem;
+        border-radius: .75rem;
+        padding: 1rem;
+    }
+    .trviews__avatar {
+        width: 3rem;
+        height: 3rem;
+        min-width: 3rem;
+        font-size: 1rem;
+    }
+    .reviews__inform {
+        padding-left: .75rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .reviews__dwsc {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        margin-top: 0.25rem;
+    }
+}

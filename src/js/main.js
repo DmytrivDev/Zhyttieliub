@@ -3,6 +3,8 @@ import { partnearsSlider } from './parts/partnears';
 import { formFunc } from './parts/form';
 import { openWindowFunc } from './parts/aboutfond';
 import { parallaxFunc } from './parts/parallax';
+import { teamFunc, showAllTeam } from './parts/team';
+import { faqFunc } from './parts/faq';
 
 import scrollToElement from 'scroll-to-element';
 
@@ -31,3 +33,8 @@ scrollBtns?.forEach(el => {
     });
   });
 });
+
+teamFunc();
+showAllTeam();
+
+faqFunc();

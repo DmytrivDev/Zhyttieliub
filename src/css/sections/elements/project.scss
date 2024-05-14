@@ -159,6 +159,10 @@
     }
 }
 
+.project__button {
+    display: none;
+}
+
 @media screen and (max-width: 960px) {
     .project__item {
         border-radius: 1rem;
@@ -197,5 +201,93 @@
     }
     .project__overlink {
         display: none;
+    }
+}
+
+@media screen and (min-width: 561px) {
+    .firstB {
+        .project__item {
+            &:first-child {
+                margin-bottom: 0;
+                gap: 1rem;
+                grid-template-columns: 1fr 1fr;
+                grid-area: 1 / 1 / 2 / 3;
+                display: grid;
+                padding: 0;
+                background-color: transparent;
+                box-shadow: none;
+                .project__top {
+                    padding: 1.5rem 1rem;
+                    padding-bottom: 7rem;
+                    min-height: 24rem;
+                    border-radius: .75rem;
+                    order: 2;
+                    position: relative;
+                    background-color: var(--cbg);
+                    display: flex;
+                    flex-direction: column;
+                    .project__name {
+                        font-size: 1.5rem;
+                        line-height: 2rem;
+                    }
+                    .project__tags {
+                        margin-top: 1.25rem;
+                    }
+                    .oroject__desc {
+                        margin-top: 1rem;
+                        order: 1;
+                    }
+                    .project__button {
+                        bottom: 1.5rem;
+                        left: 1rem;
+                        right: 1rem;
+                        position: absolute;
+                        display: flex;
+                    }
+                }
+                .project__bottom {
+                    border-radius: 1rem;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    .project__arrow,
+                    .project__overlink {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .firstB {
+        .project__item {
+            &:first-child {
+                margin-bottom: 1rem;
+                grid-template-columns: 2fr 1fr;
+                grid-area: 1 / 1 / 2 / 4;
+                .project__top {
+                    padding: 2rem 1.5rem;
+                    min-height: 34rem;
+                    border-radius: 1.5rem;
+                    .project__name {
+                        font-size: 2rem;
+                        line-height: 2.5rem;
+                    }
+                    .project__tags {
+                        margin-top: 1.5rem;
+                    }
+                    .project__button {
+                        bottom: 2rem;
+                        left: 1.5rem;
+                        right: 1.5rem;
+                    }
+                }
+                .project__bottom {
+                    border-radius: 1.5rem;
+                }
+            }
+        }
     }
 }

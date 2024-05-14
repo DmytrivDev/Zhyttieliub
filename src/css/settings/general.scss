@@ -52,6 +52,11 @@ p {
         color: var(--ct);
     }
 
+    &.gray {
+        background-color: var(--cbg);
+        color: var(--ct);
+    }
+
     &.withicon {
         gap: 0.5rem;
 
@@ -69,6 +74,19 @@ p {
         align-items: center;
         align-content: center;
 
+        &.bottom {
+            &::after {
+                border-radius: 0 0.75rem 0 0.75rem;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M14.1667 14.1667L5 5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M9.16602 14.8904C9.16602 14.8904 13.8606 15.2862 14.5731 14.5738C15.2855 13.8614 14.8897 9.16669 14.8897 9.16669' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            }
+
+            &:hover {
+                &::after {
+                    background-position: 1.35rem 1.25rem;
+                }
+            }
+        }
+
         &:hover {
             &::after {
                 background-position: 1.35rem -1.25rem;
@@ -78,8 +96,9 @@ p {
         &::after {
             width: 1.25rem;
             height: 1.25rem;
-            border-radius: .75rem 0 .75rem 0;
+            border-radius: 0.75rem 0 0.75rem 0;
             transition: 0.3s;
+            overflow: hidden;
             content: "";
             background-position: 0 0;
             background-size: contain;
@@ -127,6 +146,76 @@ h4 {
 
 button {
     background-color: transparent;
+}
+
+.pagination__cont {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+    .facetwp-pager {
+        min-width: 28rem;
+        padding: 0 4.25rem;
+        min-height: 2.75rem;
+        gap: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        max-width: 100%;
+
+        .prev,
+        .next {
+            width: 2.75rem;
+            height: 2.75rem;
+            background-size: 1.25rem;
+            border-radius: 50%;
+            background-color: var(--cbg2);
+            position: absolute;
+            top: 0;
+            font-size: 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+
+            &.prev {
+                left: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M12.5 15C12.5 15 7.5 11.3176 7.5 10C7.5 8.68233 12.5 5 12.5 5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            }
+
+            &.next {
+                right: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7.50004 5C7.50004 5 12.5 8.68242 12.5 10C12.5 11.3177 7.5 15 7.5 15' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            }
+        }
+
+        .facetwp-page:not(.prev, .next) {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            min-width: 1.5rem;
+            cursor: pointer;
+            text-align: center;
+
+            &.active {
+                color: var(--ct3);
+                position: relative;
+
+                &::after {
+                    height: 0.25rem;
+                    border-radius: 0.25rem;
+                    background-color: var(--cy);
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(100%);
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -183,6 +272,29 @@ button {
     }
     .section__simple {
         padding-top: 6rem;
+    }
+    .pagination__cont {
+        margin-top: 2.5rem;
+        .facetwp-pager {
+            min-width: inherit;
+            padding: 0 3.5rem;
+            min-height: 2.5rem;
+            gap: 1rem;
+            .prev,
+            .next {
+                width: 2.5rem;
+                height: 2.5rem;
+                background-size: 1rem;
+            }
+            .facetwp-page:not(.prev, .next) {
+                font-size: 1rem;
+                &.active {
+                    &::after {
+                        height: 0.125rem;
+                    }
+                }
+            }
+        }
     }
 }
 
