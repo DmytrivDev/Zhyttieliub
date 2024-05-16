@@ -33,5 +33,13 @@
 /* Projects */
 @import url("./sections/projects/projects.scss");
 
+/* Project */
+@import url("./sections/project/project.scss");
+@import url("./sections/project/join.scss");
+@import url("./sections/project/similar.scss");
+
+/* Reports */
+@import url("./sections/reports/reports.scss");
+
 /* Footer */
 @import url("./sections/footer/footer.scss");

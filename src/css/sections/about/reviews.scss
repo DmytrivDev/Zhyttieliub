@@ -1,5 +1,13 @@
 .section__reviews {
     margin-top: 11rem;
+
+    &.beneficiares {
+        margin-top: 8rem;
+
+        h2 {
+            text-align: center;
+        }
+    }
 }
 
 .reviews__content {
@@ -121,12 +129,17 @@
     margin-top: 1rem;
 }
 
-
 @media screen and (max-width: 960px) {
     .section__reviews {
         margin-top: 6rem;
         h2 {
             font-size: 1.95rem;
+        }
+        &.beneficiares {
+            margin-top: 6rem;
+            h2 {
+                text-align: left;
+            }
         }
     }
     .reviews__content {
@@ -134,7 +147,7 @@
     }
     .reviews__item {
         width: 21.5rem;
-        border-radius: .75rem;
+        border-radius: 0.75rem;
         padding: 1rem;
     }
     .trviews__avatar {
@@ -144,7 +157,7 @@
         font-size: 1rem;
     }
     .reviews__inform {
-        padding-left: .75rem;
+        padding-left: 0.75rem;
         font-size: 1rem;
         line-height: 1.5rem;
     }

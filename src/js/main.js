@@ -5,6 +5,8 @@ import { openWindowFunc } from './parts/aboutfond';
 import { parallaxFunc } from './parts/parallax';
 import { teamFunc, showAllTeam } from './parts/team';
 import { faqFunc } from './parts/faq';
+import { embedFunc } from './parts/embed';
+import { similarFunc } from './parts/similar';
 
 import scrollToElement from 'scroll-to-element';
 
@@ -38,3 +40,7 @@ teamFunc();
 showAllTeam();
 
 faqFunc();
+
+embedFunc();
+
+similarFunc();

@@ -1,0 +1,226 @@
+.section__reports {
+    padding-top: 14.5em;
+
+    h1 {
+        text-align: center;
+    }
+
+    .main__text {
+        max-width: 60.125rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+}
+
+.report__list {
+    margin-top: 4.9rem;
+    gap: 9.3rem;
+    flex-direction: column;
+    position: relative;
+}
+
+.report__item {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+
+    &:nth-child(even) {
+        flex-direction: row;
+
+        .report__img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+.report__content {
+    width: 41rem;
+}
+
+.report__head {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--ct2);
+    border-bottom: 1px solid var(--cbor);
+    font-family: var(--fm);
+    position: relative;
+
+    span {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        color: var(--ct);
+        font-family: var(--fs);
+    }
+
+    .projects__donate {
+        bottom: 1rem;
+        right: 0;
+        top: auto;
+    }
+}
+
+.report__middle {
+    margin-top: 1.5rem;
+
+    p {
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .button {
+        margin-top: 2rem;
+        min-width: 12.5rem;
+        justify-content: center;
+
+        &::before {
+            width: 1.25em;
+            height: 1.25em;
+            margin-right: 0.75rem;
+            margin-top: -0.25rem;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 9.1665V8.33317C17.5 5.19047 17.5 3.61913 16.4663 2.64281C15.4325 1.6665 13.7687 1.6665 10.4412 1.6665H9.55883C6.23127 1.6665 4.56748 1.6665 3.53374 2.64281C2.5 3.61913 2.5 5.19047 2.5 8.33317V11.6665C2.5 14.8092 2.5 16.3806 3.53374 17.3568C4.56748 18.3332 6.23126 18.3332 9.55883 18.3332H10' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M6.66602 5.8335H13.3327' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M6.66602 10H10.8327' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M17.5 17.2058V14.1665C17.5 12.9753 16.3807 11.6665 15 11.6665C13.6192 11.6665 12.5 12.9753 12.5 14.1665V17.0832C12.5 17.7329 13.1105 18.3332 13.8637 18.3332C14.6168 18.3332 15.2272 17.7329 15.2272 17.0832V14.8038' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+        }
+    }
+}
+
+.report__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-family: var(--fm);
+}
+
+.reports__punkts {
+    margin-top: 2rem;
+    border-top: 1px solid var(--cbor);
+
+    li {
+        padding: 2rem 0;
+        padding-right: 5rem;
+        border-bottom: 1px solid var(--cbor);
+        position: relative;
+
+        a {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-family: var(--fm);
+            color: var(--ct);
+
+            &::after {
+                width: 4.5rem;
+                height: 3rem;
+                border-radius: 2rem;
+                background-size: 1.125rem;
+                background-color: var(--cbg);
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M17.5 9.1665V8.33317C17.5 5.19047 17.5 3.61913 16.4663 2.64281C15.4325 1.6665 13.7687 1.6665 10.4412 1.6665H9.55883C6.23127 1.6665 4.56748 1.6665 3.53374 2.64281C2.5 3.61913 2.5 5.19047 2.5 8.33317V11.6665C2.5 14.8092 2.5 16.3806 3.53374 17.3568C4.56748 18.3332 6.23126 18.3332 9.55883 18.3332H10' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M6.66602 5.8335H13.3327' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M6.66602 10H10.8327' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M17.5 17.2058V14.1665C17.5 12.9753 16.3807 11.6665 15 11.6665C13.6192 11.6665 12.5 12.9753 12.5 14.1665V17.0832C12.5 17.7329 13.1105 18.3332 13.8637 18.3332C14.6168 18.3332 15.2272 17.7329 15.2272 17.0832V14.8038' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            }
+        }
+    }
+}
+
+.report__img {
+    width: 34rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+@media screen and (max-width: 960px) {
+    .section__reports {
+        padding-top: 12.8em;
+        h1 {
+            text-align: left;
+        }
+        .main__text {
+            margin: 0;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+    }
+    .report__list {
+        margin-top: 4rem;
+        gap: 4rem;
+    }
+    .report__content {
+        width: calc(50% - .75rem);
+    }
+    .report__head {
+        padding-bottom: .5rem;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        span {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+        .projects__donate {
+            display: none;
+        }
+    }
+    .report__middle {    
+        p {
+            margin-top: .5rem;
+            font-size: 0.875rem;
+        }
+        .button {
+            margin-top: 1.5rem;
+            min-width: inherit;
+            width: 100%;
+        }
+    }
+    .report__title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .reports__punkts {    
+        li {
+            padding: 1.5rem 0;
+            a {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+                max-width: 7rem;
+                display: inline-block;
+            }
+        }
+    }
+    .report__img {
+        width: calc(50% - .75rem);
+        border-radius: .75rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .report__item {
+        display: block;
+    }
+    .report__content {
+        width: 100%;
+    }
+    .report__img {
+        margin: 0 auto;
+        margin-top: 1.5rem;
+        height: 26.25em;
+        position: relative;
+        max-width: 26.500em;
+        width: 100%;
+    }
+}
