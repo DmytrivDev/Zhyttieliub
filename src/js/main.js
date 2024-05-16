@@ -7,6 +7,7 @@ import { teamFunc, showAllTeam } from './parts/team';
 import { faqFunc } from './parts/faq';
 import { embedFunc } from './parts/embed';
 import { similarFunc } from './parts/similar';
+import { filterFunc } from './parts/filter';
 
 import scrollToElement from 'scroll-to-element';
 
@@ -44,3 +45,5 @@ faqFunc();
 embedFunc();
 
 similarFunc();
+
+filterFunc();

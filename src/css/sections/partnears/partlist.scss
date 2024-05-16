@@ -1,0 +1,161 @@
+.section__partlist {
+    margin-top: 11rem;
+}
+
+.partlist__list {
+    gap: 8rem;
+    flex-direction: column;
+
+    .prtns__carousell {
+        margin-top: 2rem;
+    }
+
+    & > li {
+        width: 100%;
+    }
+}
+
+.partlist__img {
+    border-radius: 1.5rem;
+    padding-top: 48.2%;
+    position: relative;
+    overflow: hidden;
+}
+
+.partlist__top {
+    margin-top: 3rem;
+    padding-bottom: 1.25rem;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid var(--cbor);
+}
+
+.partlist__part {
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.partlist__name {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--ct2);
+
+    span {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        margin-right: 0.5rem;
+        font-family: var(--fs);
+        color: var(--ct);
+        display: inline-block;
+    }
+}
+
+.partlist__niddle {
+    margin-top: 2rem;
+}
+
+.partlist__text {
+    max-width: 41.4rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: var(--ct);
+}
+
+.partlist__cats {
+    max-width: 33.625rem;
+    width: 100%;
+    gap: 0.75rem;
+
+    li {
+        a {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            padding: .75rem 1rem;
+            border-radius: 2rem;
+            display: block;
+            background-color: var(--cbg);
+            font-family: var(--fs);
+            color: var(--ct);
+            white-space: nowrap;
+        }
+    }
+}
+
+.partlist__mob {
+    display: none;
+}
+
+
+@media screen and (max-width: 960px) {
+    .section__partlist {
+        margin-top: 6rem;
+    }
+    .partlist__list {
+        gap: 4rem;
+        .prtns__carousell {
+            margin-top: 2.5rem;
+        }
+    }
+    .partlist__img {
+        border-radius: 1rem;
+    }
+    .partlist__top {
+        margin-top: 1.5rem;
+        padding-bottom: .75rem;
+        .partlist__part {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+    .partlist__img {
+        padding-top: 65.1%;
+    }
+    .partlist__name {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        span {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin-right: 0.25rem;
+        }
+    }
+    .partlist__niddle {
+        margin-top: .75rem;
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+    .partlist__text {
+        max-width: inherit;
+        width: 100%;
+        font-size: .875rem;
+        line-height: 1.25rem;
+    }
+    .partlist__cats {
+        max-width: inherit;
+        gap: 0.5rem;
+        li {
+            a {
+                font-size: 0.75rem;
+                line-height: 1rem;
+                padding: .5rem .75rem;
+            }
+        }
+    }
+    .partlist__mob {
+        margin-top: 2rem;
+        display: flex;
+        .button {
+            width: calc(50% - .5rem);
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .partlist__mob {
+        flex-direction: column;
+        .button {
+            width: 100%;
+        }
+    }
+}

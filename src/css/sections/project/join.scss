@@ -11,6 +11,10 @@
     align-content: flex-start;
     overflow: hidden;
 
+    &.blue {
+        background-color: var(--cb2);
+    }
+
     & > * {
         position: relative;
         z-index: 2;

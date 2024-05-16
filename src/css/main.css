@@ -41,5 +41,9 @@
 /* Reports */
 @import url("./sections/reports/reports.scss");
 
+/* Pooter */
+@import url("./sections/partnears/partnears.scss");
+@import url("./sections/partnears/partlist.scss");
+
 /* Footer */
 @import url("./sections/footer/footer.scss");

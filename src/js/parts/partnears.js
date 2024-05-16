@@ -23,4 +23,24 @@ export const partnearsSlider = () => {
 
     new Splide(slider, options).mount();
   }
+
+  const prtnsCar = document.querySelectorAll('.prtns__carousell');
+
+  const prtnsOptions = {
+    type: 'slide',
+    perPage: 6,
+    gap: '1em',
+    pagination: false,
+    arrows: false,
+    breakpoints: {
+      960: {
+        perPage: 0,
+        fixedWidth: '8rem',
+      },
+    },
+  };
+
+  prtnsCar?.forEach(el => {
+    new Splide(el, prtnsOptions).mount();
+  });
 };
