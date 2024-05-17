@@ -15,6 +15,26 @@
         background-color: var(--cb2);
     }
 
+    &.news {
+        padding-bottom: 5.5rem;
+        align-items: flex-end;
+        align-content: flex-end;
+        background-color: var(--cb2);
+
+        .join__dec {
+            width: 27.25056rem;
+            height: 31.62631rem;
+            top: 0.75rem;
+            right: 7.5rem;
+            transform: none;
+            display: none;
+
+            &.hart {
+                display: block;
+            }
+        }
+    }
+
     & > * {
         position: relative;
         z-index: 2;
@@ -61,6 +81,12 @@
             margin-top: 0;
             white-space: nowrap;
         }
+        &.news {
+            .join__dec {
+                top: 0;
+                right: 0;
+            }
+        }
     }
     .joun__info {
         max-width: calc(100% - 16deg);
@@ -83,6 +109,28 @@
         flex-direction: column;
         .button {
             width: 100%;
+        }
+        &.news {
+            padding-bottom: 3em;
+            display: block;
+            p {
+                br {
+                    display: none;
+                }
+            }
+            .button {
+                margin-top: 5rem;
+            }
+            .join__dec {
+                width: 33.93788rem;
+                height: 34.37519rem;
+                top: -5em;
+                right: -14.99em;
+                display: block;
+                &.hart {
+                    display: none;
+                }
+            }
         }
     }
 }

@@ -8,6 +8,10 @@ body {
     font-family: var(--fr);
     color: var(--ct);
     background-color: var(--cw);
+
+    &.overhide {
+        overflow: hidden;
+    }
 }
 
 .main {
@@ -55,6 +59,11 @@ p {
     &.gray {
         background-color: var(--cbg);
         color: var(--ct);
+    }
+
+    &.black {
+        background-color: var(--ct);
+        color: var(--cw);
     }
 
     &.withicon {

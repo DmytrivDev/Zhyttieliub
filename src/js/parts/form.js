@@ -1,6 +1,7 @@
 import isEmail from 'validator/lib/isEmail';
 import isMobilePhone from 'validator/lib/isMobilePhone';
 import isEmpty from 'validator/lib/isEmpty';
+import NiceSelect2 from 'nice-select2';
 import axios from 'axios';
 import IMask from 'imask';
 
@@ -18,11 +19,17 @@ export const formFunc = async () => {
   async function sendForm(form) {
     const myFormData = new FormData(form);
 
+    //Axios request
+
+    //If success
     formEnd(form, true);
   }
 
   function formEnd(form, status) {
     if (status) {
+      document.querySelector('.popup.opened')?.classList.remove('opened');
+      document.getElementById('success').classList.add('opened');
+      document.querySelector('body').classList.add('overhide');
       form.reset();
     }
   }
@@ -106,4 +113,15 @@ export const formFunc = async () => {
       el.classList.remove('error');
     });
   }
+
+  /////////////////
+  const selectors = document.querySelectorAll('.form__selector');
+
+  selectors?.forEach(el => {
+    new NiceSelect2(el, {
+      searchable: false,
+      searchtext: 'zoek',
+      selectedtext: 'geselecteerd',
+    });
+  });
 };

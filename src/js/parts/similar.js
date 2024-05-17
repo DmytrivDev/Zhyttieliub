@@ -23,6 +23,10 @@ export const similarFunc = () => {
   };
 
   carousellSim?.forEach(el => {
+    if(el.classList.contains('blog')) {
+      sliderOptions.perPage = 2;
+    }
+
     new Splide(el, sliderOptions).mount();
   });
 };

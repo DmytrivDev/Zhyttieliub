@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Життєлюб</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="homePage" id="top">
+    <load="partials/header/header.html" />
+
+    <main class="main">
+      <section class="section__search">
+        <div class="container">
+          <h1>Explore</h1>
+          <form class="search__form flex">
+            <input type="search" placeholder="Пишіть тут" class="search__input input">
+            <button class="button border" type="submit">Пошук</button>
+          </form>
+          <div class="search__content">
+            <div style="display: none;" class="search__emptycont">
+              <div class="search__oftencont">
+                <span><span>Часто шукають</span></span>
+                <ul>
+                  <li>
+                    <button>Простір Життєлюб</button>
+                  </li>
+                  <li>
+                    <button>Обід без бід</button>
+                  </li>
+                  <li>
+                    <button>Життєлюб поруч</button>
+                  </li>
+                  <li>
+                    <button>Гуманітарний хаб</button>
+                  </li>
+                  <li>
+                    <button>Трудолюб</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="search__notfound">
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                </p>
+              </div>
+            </div>
+            <ul class="search__list">
+              <li>
+                <a href="#" class="flex">
+                  <span class="search__name">Ut enim ad minim veniam...</span>
+                  <span class="search__middle"><span>Проєкти</span></span>
+                  <span class="search__arrow button witharrow"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex">
+                  <span class="search__name">Quis nostrud exercitation ullamco...</span>
+                  <span class="search__middle"><span>Новини</span></span>
+                  <span class="search__arrow button witharrow"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex">
+                  <span class="search__name">Ut enim ad minim veniam...</span>
+                  <span class="search__middle"><span>Партнери фонду</span></span>
+                  <span class="search__arrow button witharrow"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex">
+                  <span class="search__name">Quis nostrud exercitation ullamco...</span>
+                  <span class="search__middle"><span>Обід без бід</span></span>
+                  <span class="search__arrow button witharrow"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load="partials/footer/footer.html" />
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

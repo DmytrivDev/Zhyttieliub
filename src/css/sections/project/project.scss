@@ -1,6 +1,25 @@
 .section__project {
     padding-top: 9.5rem;
     overflow: hidden;
+
+    .project__tags {
+        margin: 0;
+    }
+
+    &.section__article {
+        .projectp__top {
+            padding: 0;
+        }
+
+        .project__tags {
+            li {
+                font-family: var(--fs);
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 .projectp__top {
@@ -376,6 +395,20 @@
     }
 }
 
+.article__date {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-family: var(--fs);
+    color: var(--ct2);
+}
+
+.article__desc {
+    max-width: 64rem;
+    margin-top: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
 @media screen and (max-width: 960px) {
     .section__project {
         padding-top: 9.75rem;
@@ -517,6 +550,9 @@
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='55' viewBox='0 0 72 55' fill='none'%3E%3Cpath d='M6.59835 37.9714C5.83038 36.3674 3.57604 33.0725 3.57604 33.0725L0.999646 53.5227C6.43114 47.8621 13.9095 41.4396 19.3379 35.779C16.2722 36.9402 13.2066 38.0984 10.1409 39.2596' stroke='%23E1E1E1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M69.157 33.9704C70.8013 27.6564 70.8354 20.5713 68.2714 14.4957C65.7383 8.49754 60.9757 3.12488 54.5007 1.58276C51.3328 0.827182 48.007 0.827179 44.8175 1.46199C37.528 2.91431 31.1397 7.34868 25.8723 12.5913C18.428 20.0015 12.8014 29.2264 9.62739 39.2378' stroke='%23E1E1E1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             }
         }
+    }
+    .article__desc {
+        display: none;
     }
 }
 

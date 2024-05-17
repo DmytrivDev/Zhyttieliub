@@ -1,0 +1,32 @@
+.section__page {
+    padding-top: 10.5rem;
+}
+
+.page__container {
+    max-width: 69rem;
+    margin: 0 auto;
+
+    & > h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+}
+
+.page__content {
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 960px) {
+    .section__page {
+        padding-top: 12.8rem;
+    }
+    .page__container {
+        & > h1 {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+    .page__content {
+        margin-top: 2rem;
+    }
+}

@@ -1,0 +1,115 @@
+.cont__container {
+    margin-top: 4rem;
+    gap: 1rem;
+}
+
+.cont__left {
+    width: 34rem;
+    padding: 3.5rem 4rem;
+    position: relative;
+    position: relative;
+    z-index: 2;
+}
+
+.cont__list {
+    gap: 2.5rem;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+
+    span {
+        margin-bottom: 0.5rem;
+        color: var(--ct2);
+        display: block;
+    }
+
+    a,
+    div {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-family: var(--fm);
+        color: var(--ct);
+    }
+
+    .footer__socials {
+        margin: 0;
+    }
+}
+
+.cont__dec {
+    width: 14.0515rem;
+    height: 8.80956rem;
+    bottom: 5.76em;
+    right: -3.34rem;
+    transform: rotate(-3.02deg);
+    position: absolute;
+}
+
+.cont__right {
+    width: 48rem;
+    padding: 4rem 3.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--cbg);
+    position: relative;
+
+    .contact__form {
+        margin: 0;
+        padding: 0;
+    }
+
+    .projects__donate {
+        top: 3.65rem;
+        right: 0;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cont__container {
+        margin-top: 2.5rem;
+        gap: 1.5rem;
+    }
+    .cont__left {
+        width: calc(50% - 0.75rem);
+        padding: 0;
+    }
+    .cont__list {
+        gap: 1.5rem;
+        a,
+        div {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+        .footer__socials {
+            margin: 0;
+        }
+    }
+    .cont__dec {
+        width: 7.77975rem;
+        height: 4.87744rem;
+        bottom: 2.58em;
+        right: 1rem;
+    }
+    .cont__right {
+        width: calc(50% - 0.75rem);
+        padding: 1.25rem 1rem;
+        padding-bottom: 1.5em;
+        border-radius: .75rem;
+        .contact__form {
+            margin: 0;
+            padding: 0;
+        }
+        .projects__donate {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .cont__left, .cont__right {
+        width: 100%;
+    }
+    .cont__dec {
+        bottom: -2.58em;
+    }
+}
