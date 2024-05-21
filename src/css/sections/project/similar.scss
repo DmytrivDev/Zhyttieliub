@@ -32,6 +32,11 @@
             background-position: center center;
             opacity: 1;
             transform: none;
+            transition: .3s;
+
+            &:hover {
+                background-color: var(--cy);
+            }
 
             svg {
                 display: none !important
@@ -47,6 +52,7 @@
 
             &:disabled {
                 opacity: 0.6;
+                background-color: var(--cbg);
             }
         }
     }

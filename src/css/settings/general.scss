@@ -7,6 +7,7 @@ body {
     line-height: 1.5;
     font-family: var(--fr);
     color: var(--ct);
+    font-variant-numeric: lining-nums tabular-nums;
     background-color: var(--cw);
 
     &.overhide {
@@ -40,6 +41,12 @@ p {
     align-items: center;
     align-content: center;
     justify-content: center;
+    transition: .3s;
+    box-shadow: none;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
 
     &.yellow {
         background-color: var(--cy);
@@ -201,7 +208,12 @@ button {
             font-size: 0;
             background-repeat: no-repeat;
             background-position: center center;
+            transition: .3s;
             cursor: pointer;
+
+            &:hover {
+                background-color: var(--cy);
+            }
 
             &.prev {
                 left: 0;

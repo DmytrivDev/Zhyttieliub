@@ -107,10 +107,13 @@
         line-height: 2rem;
         margin-top: 0.5rem;
     }
+    .news__filter {
+        margin-bottom: 2rem !important;
+    }
 }
 
 @media screen and (min-width: 561px) {
-    .firstB {
+    .newslist.firstB {
         grid-template-columns: 1fr 1fr;
         .newsitem__item {
             &:first-child {
@@ -178,7 +181,7 @@
 }
 
 @media screen and (min-width: 961px) {
-    .firstB {
+    .newslist.firstB {
         grid-template-columns: 1fr 1fr;
         .newsitem__item {
             &:first-child {
@@ -192,7 +195,6 @@
                     .news__name {
                         font-size: 2rem;
                         line-height: 2.5rem;
-                        padding-right: 5.25rem;
                     }
                     .news__desc {
                         margin-top: 2rem;

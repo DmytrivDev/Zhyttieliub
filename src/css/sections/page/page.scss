@@ -9,11 +9,22 @@
     & > h1 {
         font-size: 4rem;
         line-height: 4.5rem;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
 .page__content {
     margin-top: 3rem;
+}
+
+.page__date {
+    white-space: nowrap;
+    padding-left: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-family: var(--fs);
+    color: var(--ct2);
 }
 
 @media screen and (max-width: 960px) {
@@ -28,5 +39,8 @@
     }
     .page__content {
         margin-top: 2rem;
+    }
+    .page__date {
+        padding-left: 0;
     }
 }

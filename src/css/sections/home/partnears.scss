@@ -53,8 +53,11 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    top: 0;
-                    background-color: var(--cy2);
+                    top: 0; 
+                    background-color: var(--cbg2);
+                }
+                &::after {
+                    opacity: 0.6;
                 }
             }
 

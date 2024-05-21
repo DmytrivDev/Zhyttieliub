@@ -153,7 +153,7 @@
 
 @media screen and (max-width: 560px) {
     .partlist__mob {
-        flex-direction: column;
+        flex-direction: column-reverse;
         .button {
             width: 100%;
         }

@@ -75,14 +75,14 @@ export const formFunc = async () => {
     if (type === 'text') {
       if (isEmpty(val)) {
         errors = true;
-        field.classList.add('error');
+        field.closest('label').classList.add('error');
       }
     }
 
     if (type === 'email') {
       if (isEmpty(val) || !isEmail(val)) {
         errors = true;
-        field.classList.add('error');
+        field.closest('label').classList.add('error');
       }
     }
 
@@ -92,14 +92,14 @@ export const formFunc = async () => {
         !isMobilePhone(val.replace(/[^\d+]/g, ''), ['uk-UA'])
       ) {
         errors = true;
-        field.classList.add('error');
+        field.closest('label').classList.add('error');
       }
     }
 
     if (type === 'checkbox') {
       if (field.checked === false) {
         errors = true;
-        field.classList.add('error');
+        field.closest('label').classList.add('error');
       }
     }
 

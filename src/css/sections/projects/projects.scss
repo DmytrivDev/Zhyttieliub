@@ -71,7 +71,6 @@
 
 .projects__filtercont {
     margin-bottom: 2rem;
-    padding-right: 7.5rem;
     position: relative;
 }
 
@@ -250,12 +249,13 @@
     .facetwp-facet-categories {
         gap: 0.5rem;
         padding: 1rem;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
         padding-top: 0;
         overflow: auto;
         flex-wrap: nowrap;
         margin-left: -1rem;
         margin-right: -1rem;
+        &::-webkit-scrollbar { display: none; }
         .facetwp-radio {
             font-size: 0.875rem;
             padding: 0.5rem 1rem;

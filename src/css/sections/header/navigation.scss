@@ -8,9 +8,6 @@
     body {
         &.openedNav {
             overflow: hidden;
-            .header {
-                background-color: var(--cbg);
-            }
             .navigation__container {
                 transform: translateY(0);
             }
@@ -27,7 +24,7 @@
     overflow: auto;
     transform: translateY(-100%);
     transition: .3s;
-    background-color: var(--cbg);
+    background-color: var(--cw);
     z-index: 15;
 
     .container {

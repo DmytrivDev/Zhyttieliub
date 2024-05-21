@@ -18,12 +18,12 @@
 
     &:nth-child(1),
     &:nth-child(3) {
-        translate: 0 calc(var(--parallax) * (6.25rem * var(--direction) + 25rem));
+        translate: 0 calc(var(--parallax) * (6.25rem * var(--direction) + 12rem));
     }
 
     &:nth-child(2),
     &:nth-child(4) {
-        translate: 0 calc(var(--parallax) * (16.25rem * var(--direction) + 25rem));
+        translate: 0 calc(var(--parallax) * (16.25rem * var(--direction) + 12rem));
     }
 }
 
@@ -105,6 +105,14 @@
     .gallery__column {
         gap: 0.5rem;
         flex-direction: column;
+        &:nth-child(1),
+        &:nth-child(3) {
+            translate: 0 calc(var(--parallax) * (6.25rem * var(--direction) + 12rem));
+        }
+        &:nth-child(2),
+        &:nth-child(4) {
+            translate: 0 calc(var(--parallax) * (16.25rem * var(--direction) + 16rem));
+        }
     }
     .gallery__plate {
         height: 19.8rem;

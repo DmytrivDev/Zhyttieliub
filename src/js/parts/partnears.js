@@ -29,12 +29,16 @@ export const partnearsSlider = () => {
   const prtnsOptions = {
     type: 'slide',
     perPage: 6,
+    interval: 2000,
+    perMove: 1,
     gap: '1em',
     pagination: false,
+    autoplay: true,
+    pauseOnHover: true,
     arrows: false,
     breakpoints: {
       960: {
-        perPage: 0,
+        perPage: 1,
         fixedWidth: '8rem',
       },
     },

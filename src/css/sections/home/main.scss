@@ -4,7 +4,7 @@
 
 .main__inner {
     min-height: 46.2rem;
-    padding-top: 6.5em;
+    padding-top: 8em;
     display: flex;
     align-items: center;
     align-content: center;
@@ -20,6 +20,11 @@
 .main__text {
     margin-top: 2rem;
     max-width: 34rem;
+
+    b {
+        font-weight: normal;
+        color: var(--ct);
+    }
 
     & > * {
         margin-top: 1.5rem;
@@ -50,8 +55,8 @@
     height: 53.875rem;
     width: 60.5rem;
     transform: rotate(137.64deg);
-    top: -10.125rem;
-    left: -32.7rem;
+    top: -10.5rem;
+    left: -32.4rem;
     z-index: 1;
     position: absolute;
 }
@@ -63,15 +68,15 @@
 .main__donat {
     width: 6rem;
     height: 6rem;
-    bottom: -3rem;
     background-size: 2.4375rem;
     transform: rotate(-12.209deg);
-    right: 0;
+    right: 3.5rem;
+    bottom: 3.5rem;
+    z-index: 15;
+    position: fixed;
     box-shadow: var(--shadow);
     border-radius: 50%;
-    position: absolute;
     display: block;
-    z-index: 3;
     background-color: var(--cy);
     background-repeat: no-repeat;
     background-position: center center;
