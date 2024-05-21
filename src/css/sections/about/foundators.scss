@@ -68,7 +68,7 @@
     font-size: 2rem;
     margin-top: 1.5rem;
     line-height: 2.5rem;
-    font-family: var(--fs);
+    font-family: var(--fs); 
 }
 
 .team__informcont {
@@ -103,6 +103,14 @@
             a {
                 &::before {
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cg clip-path='url(%23clip0_80_2154)'%3E%3Cpath d='M6 10C6 8.1144 6 7.1716 6.58579 6.58579C7.1716 6 8.1144 6 10 6H10.6667C12.5523 6 13.4951 6 14.0809 6.58579C14.6667 7.1716 14.6667 8.1144 14.6667 10V10.6667C14.6667 12.5523 14.6667 13.4951 14.0809 14.0809C13.4951 14.6667 12.5523 14.6667 10.6667 14.6667H10C8.1144 14.6667 7.1716 14.6667 6.58579 14.0809C6 13.4951 6 12.5523 6 10.6667V10Z' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.3339 5.99967C11.3323 4.02828 11.3025 3.00715 10.7286 2.30796C10.6178 2.17293 10.4941 2.04913 10.3591 1.93831C9.62145 1.33301 8.52565 1.33301 6.33398 1.33301C4.14233 1.33301 3.0465 1.33301 2.30894 1.93831C2.17391 2.04912 2.0501 2.17293 1.93929 2.30796C1.33398 3.04553 1.33398 4.14135 1.33398 6.33301C1.33398 8.52467 1.33398 9.62047 1.93929 10.3581C2.0501 10.4931 2.17391 10.6169 2.30894 10.7277C3.00812 11.3015 4.02926 11.3313 6.00065 11.3329' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_80_2154'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+                }
+
+                &.copied {
+                    color: var(--ct2);
+
+                    &::before {
+                        background-image: url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.33594 9.66699C3.33594 9.66699 4.33594 9.66699 5.66927 12.0003C5.66927 12.0003 9.37514 5.88921 12.6693 4.66699' stroke='%23636363' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    }
                 }
             }
         }

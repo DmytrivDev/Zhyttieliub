@@ -36,10 +36,10 @@ export const embedFunc = () => {
       document.execCommand('copy');
       document.body.removeChild(tempInput);
 
-
-
+      e.target.classList.add('copied');
       e.target.innerHTML = copyEdt;
       setTimeout(function () {
+        e.target.classList.remove('copied');
         e.target.innerHTML = copySt;
       }, 2000);
     });

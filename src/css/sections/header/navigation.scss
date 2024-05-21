@@ -8,6 +8,9 @@
     body {
         &.openedNav {
             overflow: hidden;
+            .header {
+                background-color: var(--cw);
+            }
             .navigation__container {
                 transform: translateY(0);
             }

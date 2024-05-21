@@ -3,19 +3,18 @@ export const teamFunc = () => {
 
   teamLists?.forEach(el => {
     el.addEventListener('click', e => {
+      const elTarget = e.target.classList.contains('team__infotoggle');
+
+      if (elTarget) {
         e.preventDefault();
 
-        const elTarget = e.target.classList.contains('team__infotoggle');
+        const li = e.target.closest('li');
 
-        if(elTarget) {
-            const li = e.target.closest('li');
-
-            li.classList.toggle('opened');
-        }
+        li.classList.toggle('opened');
+      }
     });
   });
 };
-
 
 export const showAllTeam = () => {
   const showBtn = document.querySelector('.showAllTeam');
@@ -27,5 +26,5 @@ export const showAllTeam = () => {
 
     e.currentTarget.classList.toggle('bottom');
     list.classList.toggle('showedAll');
-  })
-}
+  });
+};

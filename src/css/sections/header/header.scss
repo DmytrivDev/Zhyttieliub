@@ -29,6 +29,19 @@
 }
 
 .header__list {
+    height: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    &:hover {
+        ul {
+            li {
+                a {
+                    color: var(--ct2);
+                }
+            }
+        }
+    }
     ul {
         gap: 2.5rem;
         display: flex;
@@ -38,6 +51,11 @@
                 font-size: 1.125rem;
                 font-family: var(--fs);
                 color: var(--ct);
+                transition: .3s;
+
+                &:hover {
+                    color: var(--ct);
+                }
             }
         }
     }

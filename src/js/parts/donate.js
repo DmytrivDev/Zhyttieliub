@@ -67,10 +67,12 @@ export const changeTabFunc = () => {
     }
   });
 
-  const copyBtsn = document.querySelectorAll('.donate__copy');
+  const copyBtsn = document.querySelectorAll('.donate__copy, .team__copy');
 
   copyBtsn?.forEach(el => {
     el.addEventListener('click', evt => {
+      evt.preventDefault();
+      
       const text = el.dataset.copy;
       Copy(text);
       el.classList.add('copied');
