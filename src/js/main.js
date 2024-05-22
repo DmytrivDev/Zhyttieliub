@@ -1,12 +1,12 @@
 import { openHelpToggle, headerScroll, openNav } from './parts/header';
-import { partnearsSlider } from './parts/partnears';
+import { partnearsSlider, partlistFunc } from './parts/partnears';
 import { formFunc } from './parts/form';
 import { openWindowFunc } from './parts/aboutfond';
 import { parallaxFunc } from './parts/parallax';
 import { teamFunc, showAllTeam } from './parts/team';
 import { faqFunc } from './parts/faq';
 import { embedFunc } from './parts/embed';
-import { similarFunc } from './parts/similar';
+import { similarFunc, coursor } from './parts/similar';
 import { filterFunc } from './parts/filter';
 import { numberDonate, selectFunc, changeTabFunc } from './parts/donate';
 import { popupsFunc } from './parts/popups';
@@ -18,6 +18,7 @@ headerScroll();
 openNav();
 
 partnearsSlider();
+partlistFunc();
 
 formFunc();
 
@@ -47,6 +48,7 @@ faqFunc();
 embedFunc();
 
 similarFunc();
+coursor();
 
 filterFunc();
 

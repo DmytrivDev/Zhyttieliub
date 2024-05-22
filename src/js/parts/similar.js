@@ -13,20 +13,41 @@ export const similarFunc = () => {
     pagination: false,
     rewind: false,
     breakpoints: {
-		960: {
-			perPage: 2,
-		},
-        560: {
-			perPage: 1,
-		},
-  }
+      960: {
+        perPage: 2,
+      },
+      560: {
+        perPage: 1,
+      },
+    },
   };
 
   carousellSim?.forEach(el => {
-    if(el.classList.contains('blog')) {
+    if (el.classList.contains('blog')) {
       sliderOptions.perPage = 2;
     }
 
     new Splide(el, sliderOptions).mount();
   });
+};
+
+export const coursor = () => {
+  const courField = document.querySelectorAll('.coursorField');
+
+  courField?.forEach(el => {
+    el.addEventListener('mousemove', moveCursor);
+  });
+};
+
+const moveCursor = e => {
+  const target = e.currentTarget;
+  const coursor = target.querySelector('.coursor');
+  const viewportOffset = target.getBoundingClientRect();
+  const top = viewportOffset.top;
+  const left = viewportOffset.left;
+  const mouseY = e.clientY - top;
+  const mouseX = e.clientX - left;
+
+  coursor.style.top = `${mouseY}px`;
+  coursor.style.left = `${mouseX}px`;
 };

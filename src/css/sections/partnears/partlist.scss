@@ -8,6 +8,16 @@
 
     .prtns__carousell {
         margin-top: 2rem;
+
+        &.noMove {
+            & > div {
+                animation: none !important;
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
     }
 
     & > li {

@@ -10,9 +10,17 @@
         padding-bottom: 12%;
         padding-left: 0;
         flex-direction: row-reverse;
+        
         img {
             width: 34%;
-            transform: rotate(0);
+        }
+    }
+
+    .coursorField {
+        &:hover {
+            .coursor {
+                opacity: 1 !important;
+            }
         }
     }
 }

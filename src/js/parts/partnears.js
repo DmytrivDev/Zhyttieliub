@@ -23,28 +23,34 @@ export const partnearsSlider = () => {
 
     new Splide(slider, options).mount();
   }
-
-  const prtnsCar = document.querySelectorAll('.prtns__carousell');
-
-  const prtnsOptions = {
-    type: 'slide',
-    perPage: 6,
-    interval: 2000,
-    perMove: 1,
-    gap: '1em',
-    pagination: false,
-    autoplay: true,
-    pauseOnHover: true,
-    arrows: false,
-    breakpoints: {
-      960: {
-        perPage: 1,
-        fixedWidth: '8rem',
-      },
-    },
-  };
-
-  prtnsCar?.forEach(el => {
-    new Splide(el, prtnsOptions).mount();
-  });
 };
+
+export const partlistFunc = () => {
+  const scrolls = document.querySelectorAll('.prtnsListScroll');
+  let ww = window.innerWidth;
+
+  scrolls?.forEach(el => {
+    partToggle(el, ww);
+  });
+
+  if(scrolls) {
+    window.addEventListener('resize', evt => {
+      ww = window.innerWidth;
+      scrolls?.forEach(el => {
+        partToggle(el, ww);
+      });
+    });
+  }
+};
+
+function partToggle(scrollEl, ww) {
+  const lw = scrollEl.querySelector('.widthCheck').offsetWidth;
+
+  console.log(lw);
+
+  if (ww < lw) {
+    scrollEl.classList.remove('noMove');
+  } else {
+    scrollEl.classList.add('noMove');
+  }
+}

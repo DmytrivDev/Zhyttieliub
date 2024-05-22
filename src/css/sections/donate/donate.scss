@@ -176,6 +176,7 @@
 
     .donate__optionsgroup {
         span {
+            font-size: 1rem;
             background-color: var(--cbg2) !important;
             color: var(--ct2) !important;
         }
@@ -240,6 +241,7 @@
         }
 
         span {
+            font-size: 1rem;
             padding: 1rem;
             border-radius: 3rem;
             transition: 0.3s;
@@ -321,6 +323,7 @@
     width: 100%;
 
     span {
+        font-size: 1.125rem !important;
         max-width: calc(100% - 2.5rem);
         padding: 0 !important;
         color: var(--ct) !important;
@@ -404,6 +407,7 @@
     line-height: 1.5rem;
     font-family: var(--fs);
     span {
+        font-size: 1.125rem !important;
         color: var(--ct) !important;
     }
 }

@@ -112,7 +112,7 @@
     }
 
     &.open {
-        .current {
+        .current, .multiple-options {
             &::after {
                 transform: translateY(-50%) rotate(-180deg);
             }
@@ -123,7 +123,7 @@
         }
     }
 
-    .current {
+    .current, .multiple-options {
         font-size: 1.125rem;
         height: 3.5rem;
         padding: 0 1.5rem;
@@ -142,6 +142,19 @@
         display: block;
         width: 100%;
         background-color: var(--cw);
+
+        .current {
+            padding: 0;
+        }
+
+        &.multiple-options {
+            padding-right: 0;
+
+            &::after {
+                background-color: var(--cw);
+                z-index: 1;
+            }
+        }
 
         &::after {
             width: 1.5rem;
@@ -180,11 +193,48 @@
         li {
             padding: 0 1.5rem;
             font-size: 1rem;
+            padding-right: 3rem;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             &.selected {
                 font-weight: normal;
             }
         }
+    }
+
+    &.has-multiple {
+        .nice-select-dropdown {
+            li {
+                position: relative;
+
+                &.selected {
+                    font-weight: normal;
+                    &::after {
+                        border: none;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M14.6673 8.00016C14.6673 4.31826 11.6825 1.3335 8.00065 1.3335C4.31875 1.3335 1.33398 4.31826 1.33398 8.00016C1.33398 11.682 4.31875 14.6668 8.00065 14.6668C11.6825 14.6668 14.6673 11.682 14.6673 8.00016Z' fill='%23F6E54E'/%3E%3Cpath d='M5.33398 8.33333L7.00065 10L10.6673 6' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    }
+                }
+    
+                &::after {
+                    width: .8rem;
+                    height: .8rem;
+                    right: 1.5rem;
+                    background-size: 1rem;
+                    transition: .3s;
+                    border-radius: 50%;
+                    border: 1px solid var(--ct);
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        } 
     }
 }
 
