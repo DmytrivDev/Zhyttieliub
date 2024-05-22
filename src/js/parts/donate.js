@@ -1,16 +1,36 @@
-import NiceSelect2 from 'nice-select2';
 import Copy from 'copy-text-to-clipboard';
+import IMask from 'imask';
+
+export const numberDonate = () => {
+  const sumInputs = document.querySelectorAll('input.donate__sum');
+
+  const sumMaskOptions = {
+    mask: Number,
+    min: 0,
+    max: 900000,
+    thousandsSeparator: ' ',
+  };
+
+  sumInputs?.forEach(el => {
+    IMask(el, sumMaskOptions);
+  });
+};
 
 export const selectFunc = () => {
-  const selectors = document.querySelectorAll('select.donate__sel');
+  const selectorsCtrl = document.querySelectorAll('.donatesel__ctrl');
+
+  selectorsCtrl?.forEach(el => {
+    el.addEventListener('click', evt => {
+      const curr = evt.currentTarget;
+      const form = curr.closest('form');
+
+      form.classList.toggle('curChoosing');
+    });
+  });
+
+  const selectors = document.querySelectorAll('.donate__sel input');
 
   selectors?.forEach(el => {
-    new NiceSelect2(el, {
-      searchable: false,
-      searchtext: 'zoek',
-      selectedtext: 'geselecteerd',
-    });
-
     el.addEventListener('change', evt => {
       const val = evt.target.value;
       const tab = evt.target.closest('.donate__tab');
@@ -23,24 +43,21 @@ export const selectFunc = () => {
         .classList.remove('active');
       curOptions.classList.add('active');
 
-      const firstRadio = curOptions.querySelector('label');
-      const radio = firstRadio.querySelector('input');
-      const radioBal = radio.value;
-
-      changeSum(radioBal, tab);
-      radio.checked = true;
+      tab.classList.remove('curChoosing');
     });
   });
 
-  const donInputs = document.querySelectorAll('.donate__options input');
+  const donInputs = document.querySelectorAll('.donate__optionsgroup button');
 
   donInputs?.forEach(el => {
-    el.addEventListener('change', evt => {
+    el.addEventListener('click', evt => {
+      evt.preventDefault();
+
       const curTarhet = evt.currentTarget;
 
-      if (curTarhet.tagName === 'INPUT') {
+      if (curTarhet.tagName === 'BUTTON') {
         const tab = evt.target.closest('.donate__tab');
-        const radioBal = curTarhet.value;
+        const radioBal = curTarhet.dataset.plus;
 
         changeSum(radioBal, tab);
       }
@@ -72,7 +89,7 @@ export const changeTabFunc = () => {
   copyBtsn?.forEach(el => {
     el.addEventListener('click', evt => {
       evt.preventDefault();
-      
+
       const text = el.dataset.copy;
       Copy(text);
       el.classList.add('copied');
@@ -88,7 +105,12 @@ export const changeTabFunc = () => {
 
 function changeSum(val, form) {
   const sum = form.querySelector('.donate__sum');
-  const formattedNumber = parseFloat(val).toLocaleString('uk-UA');
+  const constsumVal = parseInt(sum.value.replace(/\s/g, '')) || 0;
+  const formattedNumber = (parseFloat(val) + constsumVal).toLocaleString(
+    'uk-UA'
+  );
 
-  sum.innerHTML = formattedNumber;
+  console.log(constsumVal);
+
+  sum.value = formattedNumber;
 }

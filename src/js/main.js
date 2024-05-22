@@ -8,7 +8,7 @@ import { faqFunc } from './parts/faq';
 import { embedFunc } from './parts/embed';
 import { similarFunc } from './parts/similar';
 import { filterFunc } from './parts/filter';
-import { selectFunc, changeTabFunc } from './parts/donate';
+import { numberDonate, selectFunc, changeTabFunc } from './parts/donate';
 import { popupsFunc } from './parts/popups';
 
 import scrollToElement from 'scroll-to-element';
@@ -50,6 +50,7 @@ similarFunc();
 
 filterFunc();
 
+numberDonate();
 selectFunc();
 changeTabFunc();
 

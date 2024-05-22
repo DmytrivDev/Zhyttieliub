@@ -13,6 +13,14 @@ body {
     &.overhide {
         overflow: hidden;
     }
+
+    * {
+        font-variant-numeric: lining-nums tabular-nums;
+    }
+}
+
+input {
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 .main {
