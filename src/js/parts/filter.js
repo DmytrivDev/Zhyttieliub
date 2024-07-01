@@ -20,6 +20,27 @@ export const filterFunc = () => {
           }, waitTimeMilliseconds);
         });
       }
+
+      if (document.querySelector('.projects__filtercont')) {
+        var filterContainer = document.querySelector('.projects__filtercont');
+
+        for (var i = 0; i < filterContainer.attributes.length; i++) {
+          var attr = filterContainer.attributes[i];
+
+          if (attr.name.startsWith('data-')) {
+            var dataKey = attr.name.slice(5);
+            var dataValue = attr.value;
+
+            var facetRadio = document.querySelector(
+              '.facetwp-radio[data-value="' + dataKey + '"]'
+            );
+
+            if (facetRadio) {
+              facetRadio.textContent = dataValue;
+            }
+          }
+        }
+      }
     });
   }
 

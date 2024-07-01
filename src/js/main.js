@@ -8,8 +8,10 @@ import { faqFunc } from './parts/faq';
 import { embedFunc } from './parts/embed';
 import { similarFunc, coursor } from './parts/similar';
 import { filterFunc } from './parts/filter';
-import { numberDonate, selectFunc, changeTabFunc } from './parts/donate';
+import { numberDonate, selectFunc, changeTabFunc, submitDonate } from './parts/donate';
 import { popupsFunc } from './parts/popups';
+import { searchF } from './parts/search';
+import { checkJarAv } from './parts/jar';
 
 import scrollToElement from 'scroll-to-element';
 
@@ -55,5 +57,10 @@ filterFunc();
 numberDonate();
 selectFunc();
 changeTabFunc();
+submitDonate();
 
 popupsFunc();
+
+searchF();
+
+checkJarAv();

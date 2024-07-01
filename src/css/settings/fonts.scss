@@ -1,6 +1,48 @@
 /* font-family: "FixelDisplay-Regular"; */
 @font-face {
     font-family: "FixelDisplay-Regular";
+    src: url("./FixelDisplay-Regular.eot");
+    src:
+        url("./FixelDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+        url("./FixelDisplay-Regular.woff2") format("woff"),
+        url("./FixelDisplay-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "FixelDisplay-Medium"; */
+@font-face {
+    font-family: "FixelDisplay-Medium";
+    src: url("./FixelDisplay-Medium.eot");
+    src:
+        url("./FixelDisplay-Medium.eot?#iefix") format("embedded-opentype"),
+        url("./FixelDisplay-Medium.woff2") format("woff"),
+        url("./FixelDisplay-Medium.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "FixelDisplay-SemiBold"; */
+@font-face {
+    font-family: "FixelDisplay-SemiBold";
+    src: url("./FixelDisplay-SemiBold.eot");
+    src:
+        url("./FixelDisplay-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("./FixelDisplay-SemiBold.woff") format("woff"),
+        url("./FixelDisplay-SemiBold.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
+/* font-family: "FixelDisplay-Regular"; */
+/* @font-face {
+    font-family: "FixelDisplay-Regular";
     src: url("../../../public/fonts/FixelDisplay-Regular/FixelDisplay-Regular.eot");
     src:
         url("../../../public/fonts/FixelDisplay-Regular/FixelDisplay-Regular.eot?#iefix") format("embedded-opentype"),
@@ -9,10 +51,10 @@
     font-display: swap;
     font-style: normal;
     font-weight: normal;
-}
+} */
 
 /* font-family: "FixelDisplay-Medium"; */
-@font-face {
+/* @font-face {
     font-family: "FixelDisplay-Medium";
     src: url("../../../public/fonts/FixelDisplay-Medium/FixelDisplay-Medium.eot");
     src:
@@ -22,10 +64,10 @@
     font-display: swap;
     font-style: normal;
     font-weight: normal;
-}
+} */
 
 /* font-family: "FixelDisplay-SemiBold"; */
-@font-face {
+/* @font-face {
     font-family: "FixelDisplay-SemiBold";
     src: url("../../../public/fonts/FixelDisplay-SemiBold/FixelDisplay-SemiBold.eot");
     src:
@@ -35,4 +77,4 @@
     font-display: swap;
     font-style: normal;
     font-weight: normal;
-}
+} */

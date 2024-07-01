@@ -372,7 +372,13 @@ button {
         iframe {
             max-width: 100% !important;
             display: block;
-            height: auto !important;
+            height: auto;
+        }
+
+        &.wp-block-video {
+            iframe {
+                height: 100% !important;
+            }
         }
 
         .wp-block-embed__wrapper {

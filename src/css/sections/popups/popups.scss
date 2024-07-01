@@ -15,6 +15,12 @@
     }
 }
 
+.form__fields {
+    select {
+        display: none !important;
+    }
+}
+
 .popup__overlay {
     opacity: 0.64;
     background-color: var(--ct);

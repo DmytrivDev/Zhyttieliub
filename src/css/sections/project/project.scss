@@ -74,6 +74,23 @@
 
 .project__progresscont {
     margin-top: 3rem;
+    display: none;
+
+    &.showed {
+        display: block;
+    }
+
+    &.showedAll {
+        .project__prpart {
+            &:nth-child(2) {
+                display: block;
+            }
+        }
+
+        .project__prline {
+            display: block;
+        }
+    }
 }
 
 .project__prline {
@@ -82,12 +99,14 @@
     padding: 0.25rem;
     background-color: var(--cbg);
     position: relative;
+    display: none;
 
     span {
         top: 0.25rem;
         bottom: 0.25rem;
         left: 0.25rem;
         border-radius: 1rem;
+        max-width: calc(100% - .5rem);
         position: absolute;
         background-color: var(--cy);
     }
@@ -98,6 +117,9 @@
 }
 
 .project__prpart {
+    &:nth-child(2) {
+        display: none;
+    }
     span {
         font-size: 0.75rem;
         line-height: 1rem;
@@ -240,6 +262,11 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    transition: .3s;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
 
     &::before {
         width: 1.25rem;

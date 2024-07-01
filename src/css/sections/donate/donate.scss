@@ -81,6 +81,12 @@
     font-family: var(--fs);
     background-color: transparent;
     transition: 0.3s;
+
+    &.error {
+        &::placeholder {
+            color: rgb(252, 191, 191);
+        }
+    }
 }
 
 .donate__sel {
@@ -265,6 +271,26 @@
 
 .donate__sumbit {
     width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        color: var(--ct);
+        background-color: var(--cy);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto 2.1rem;
+        background-image: url("data:image/svg+xml,%0A%3Csvg width='571' height='36' viewBox='0 0 571 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M472.119 14.1856C472.207 14.6591 472.242 15.1454 472.233 15.6189C472.181 18.0568 470.909 20.2516 469.708 22.3025C468.395 24.5452 466.877 26.6585 465.546 28.89C462.887 27.3991 460.399 25.5931 458.186 23.4926C457.017 22.3824 455.82 21.2547 454.96 19.8773C453.985 18.3192 453.694 16.7339 454.361 14.9678C454.728 13.9968 455.431 13.1234 456.382 12.7074C457.349 12.2835 458.482 12.3683 459.47 12.7442C460.306 13.0626 461.701 13.6497 463.119 16.142C463.391 15.0574 463.944 13.5009 464.659 12.6594C465.894 11.2069 467.452 10.6582 469.53 11.2117C471.008 11.6052 471.856 12.7698 472.121 14.1872L472.119 14.1856Z' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M569.373 8.45659C567.623 7.52876 566.509 4.78847 566.941 3C566.946 4.50052 566.251 7.75272 564 8.49178C565.814 9.54599 567.007 11.432 566.731 13.5101C566.669 12.3599 567.471 9.58278 569.372 8.45499L569.373 8.45659Z' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M522.882 27C523.009 28.7325 522.994 30.4762 522.836 32.207' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M520 29.4668C521.955 29.574 523.915 29.5564 525.868 29.4156' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M521.35 27.3232C521.535 28.1294 522.2 28.7309 522.874 29.2124C523.548 29.6939 524.284 30.1323 524.749 30.8185' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M521.053 31.5624C522.388 30.1915 523.722 28.8205 525.057 27.4512' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M75 10.0148C71.4154 8.92781 68.3927 4.36216 68.5786 1C69.1068 3.7031 68.9387 9.79127 65 11.8735C68.7448 13.1649 71.6212 16.1641 71.8289 20C71.3145 17.9502 71.8487 12.6797 75 10.0129V10.0148Z' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M121.544 17.8031C120.833 17.3411 119.836 17.3781 119.164 17.888C118.494 18.399 118.197 19.3481 118.456 20.1515C118.661 20.7882 119.157 21.2836 119.533 21.8379C119.909 22.3923 120.172 23.1294 119.857 23.7163C119.268 24.8177 117.228 24.498 116.81 25.6768C116.593 26.2916 116.98 26.9381 117.246 27.5363C117.513 28.1345 117.583 28.9912 117.005 29.2934' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.77425 29.8471C3.88451 31.3572 3.87121 32.8768 3.73242 34.385' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.26367 31.9973C2.96709 32.0904 4.6762 32.0752 6.37772 31.9536' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.44043 30.1282C2.60203 30.831 3.18187 31.3553 3.76742 31.7751C4.35297 32.1949 4.99745 32.5767 5.40049 33.175' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.18164 33.8227C3.34513 32.6279 4.50863 31.4332 5.67022 30.2403' stroke='%230E0E0E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
 }
 
 .donate__pay {
@@ -488,7 +514,7 @@
     }
     .curChoosing {
         position: relative;
-    
+
         &::after {
             content: "";
             position: absolute;
@@ -498,22 +524,22 @@
             top: 0;
             z-index: 2;
         }
-    
+
         .donate__sum {
             color: var(--ct4);
         }
-    
+
         .donate__optionsgroup {
             span {
                 background-color: var(--cbg2) !important;
                 color: var(--ct2) !important;
             }
         }
-    
+
         .donate__sumbit {
             background-color: var(--ct2);
         }
-    
+
         .donate__sel {
             .donatesel__ctrl {
                 width: 1.5rem;

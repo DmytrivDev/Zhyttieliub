@@ -41,12 +41,15 @@
     border-radius: 50%;
     background-color: var(--cy);
     position: absolute;
+    transition: .3s;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14.5269 15.0816C18.5281 12.0136 17.8948 8.61324 16.0422 7.51869C14.5897 6.66047 13.3219 7.00632 12.5603 7.55723C12.248 7.78311 12.0919 7.89605 12 7.89605C11.9081 7.89605 11.752 7.78311 11.4397 7.55723C10.6781 7.00632 9.41034 6.66047 7.95778 7.51869C6.11193 8.60928 5.64895 12.1138 9.61321 15.1813C10.37 15.7669 11.1711 16.2935 12 16.7713C13.7788 17.7965 16.4168 19 19 19M5 19C6.54872 19 8.11718 18.5674 9.50835 18' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
 
     &.opened {
+        background-color: var(--ct3);
+        background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.75 12C2.75 17.5228 7.22715 22 12.75 22C18.2728 22 22.75 17.5228 22.75 12C22.75 6.47715 18.2728 2 12.75 2' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M5.39856 5.07876C5.53691 4.93211 5.67948 4.7895 5.8261 4.65111M8.69733 2.72939C8.87884 2.6478 9.06313 2.57128 9.25 2.5M3.48172 7.94192C3.39925 8.12518 3.32195 8.31127 3.25 8.5' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.75 9L12.75 12M12.75 12L9.75 15M12.75 12L15.75 15M12.75 12L9.75 9' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
         z-index: 40;
 
         .aboutf__window {
@@ -61,6 +64,10 @@
     margin-top: 3rem;
     line-height: 2.5rem;
     font-family: var(--fm);
+
+    * {
+        color: var(--ct) !important;
+    }
 
     span {
         text-decoration: underline;

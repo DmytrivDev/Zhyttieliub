@@ -19,7 +19,7 @@
         background-color: transparent;
 
         img {
-            width: 10.9375rem;
+            width: 10.9375rem !important;
         }
     }
 }
@@ -166,7 +166,7 @@
         margin-bottom: 1.5rem;
         .custom-logo-link {
             img {
-                width: 5.56rem;
+                width: 5.56rem !important;
             }
         }
     }

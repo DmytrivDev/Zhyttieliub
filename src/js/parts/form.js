@@ -17,19 +17,27 @@ export const formFunc = async () => {
   });
 
   async function sendForm(form) {
-    const myFormData = new FormData(form);
+    const sendDeal = await sendToRM(form);
 
-    //Axios request
-
-    //If success
-    formEnd(form, true);
+    if (sendDeal === 'success') {
+      formEnd(form, true);
+    } else {
+      formEnd(form, false);
+    }
   }
 
   function formEnd(form, status) {
     if (status) {
-      document.querySelector('.popup.opened')?.classList.remove('opened');
-      document.getElementById('success').classList.add('opened');
-      document.querySelector('body').classList.add('overhide');
+      if (!form.classList.contains('statForm')) {
+        document.querySelector('.popup.opened')?.classList.remove('opened');
+        document.getElementById('success').classList.add('opened');
+        document.querySelector('body').classList.add('overhide');
+      } else {
+        form.classList.add('submited');
+        setTimeout(() => {
+          form.classList.remove('submited');
+        }, 3000);
+      }
       form.reset();
     }
   }
@@ -125,3 +133,192 @@ export const formFunc = async () => {
     });
   });
 };
+
+async function sendToRM(form) {
+  try {
+    const formData = new FormData(form);
+    const formType = form.dataset.form;
+    const leadData = {};
+    let customFields = [];
+    formData.forEach((value, key) => {
+      if (leadData[key]) {
+        if (Array.isArray(leadData[key])) {
+          leadData[key].push(value);
+        } else {
+          leadData[key] = [leadData[key], value];
+        }
+      } else {
+        leadData[key] = value;
+      }
+    });
+
+    if (formType === 'contact') {
+      customFields = [
+        {
+          attributeId: 630114,
+          value: leadData.message ? leadData.message : '_',
+        },
+      ];
+    }
+
+    if (formType === 'volontear') {
+      let selectedValues = Array.isArray(leadData.vol) ? leadData.vol.join(', ') : leadData.vol; 
+      
+      customFields = [
+        {
+          attributeId: 630153,
+          value: leadData.age ? leadData.age : '0',
+        },
+        {
+          attributeId: 630154,
+          value: selectedValues ? selectedValues : '_',
+        },
+      ];
+    }
+
+    if (formType === 'needhelp') {      
+      customFields = [
+        {
+          attributeId: 634389,
+          value: leadData.tg ? leadData.tg : '_',
+        },
+        {
+          attributeId: 634388,
+          value: leadData.project ? leadData.project : '_',
+        },
+        {
+          attributeId: 634405,
+          value: leadData.comment ? leadData.comment : '_',
+        },
+      ];
+    }
+
+    if (formType === 'partnear') {      
+      customFields = [
+        {
+          attributeId: 630191,
+          value: leadData.company ? leadData.company : '_',
+        },
+        {
+          attributeId: 630192,
+          value: leadData.comment ? leadData.comment : '_',
+        },
+      ];
+    }
+
+    const API_USER_ID = 'c30d9d24e31670e8adb5de0ed92f5e5f';
+    const API_SECRET = '6789d2513581145137b6956130e50143';
+
+    const PIPELINE_ID = form.dataset.pipeline;
+    const PIPELINE_STAGE_ID = form.dataset.step;
+
+    let accessToken = '';
+
+    async function getAccessToken() {
+      try {
+        const response = await axios.post(
+          'https://api.sendpulse.com/oauth/access_token',
+          {
+            grant_type: 'client_credentials',
+            client_id: API_USER_ID,
+            client_secret: API_SECRET,
+          }
+        );
+        accessToken = response.data.access_token;
+      } catch (error) {
+        return 'error';
+      }
+    }
+
+    async function findContactByEmail(email) {
+      const url = '/wp-admin/admin-ajax.php';
+      const params = new URLSearchParams();
+      params.append('action', 'checkContactByEmail');
+      params.append('accessToken', accessToken);
+      params.append('email', email);
+
+      try {
+        const response = await axios.post(url, params);
+        return response.data;
+      } catch (error) {
+        return 'error';
+      }
+    }
+
+    async function createContact() {
+      const contactPayload = {
+        responsibleId: 0,
+        firstName: leadData.name,
+        emails: [leadData.email],
+        phones: [leadData.phone],
+      };
+
+      try {
+        const response = await axios.post(
+          'https://api.sendpulse.com/crm/v1/contacts',
+          contactPayload,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        return response.data;
+      } catch (error) {
+        return 'error';
+      }
+    }
+
+    async function createDeal(contactId) {
+      const dealPayload = {
+        name: leadData.name,
+        pipelineId: PIPELINE_ID,
+        stepId: PIPELINE_STAGE_ID,
+        contact: [contactId],
+        attributes: customFields,
+      };
+
+      console.log(dealPayload);
+
+      try {
+        const response = await axios.post(
+          'https://api.sendpulse.com/crm/v1/deals',
+          dealPayload,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        return response.data;
+      } catch (error) {
+        return 'error';
+      }
+    }
+
+    await getAccessToken();
+
+    let contactId;
+    try {
+      const contactSearchResult = await findContactByEmail(leadData.email);
+      contactId = contactSearchResult;
+      if (contactSearchResult === 0) {
+        try {
+          const newContactResponse = await createContact();
+          contactId = newContactResponse.data.id;
+        } catch (error) {
+          throw 'error';
+        }
+      }
+    } catch (error) {
+      return 'error';
+    }
+
+    await createDeal(contactId);
+    return 'success';
+  } catch (error) {
+    return 'error';
+  }
+}

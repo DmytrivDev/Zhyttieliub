@@ -1,5 +1,6 @@
 import Copy from 'copy-text-to-clipboard';
 import IMask from 'imask';
+import axios from 'axios';
 
 export const numberDonate = () => {
   const sumInputs = document.querySelectorAll('input.donate__sum');
@@ -26,6 +27,8 @@ export const selectFunc = () => {
 
       form.classList.toggle('curChoosing');
     });
+
+    document.querySelector('.donate__sum.error')?.classList.remove('error');
   });
 
   const selectors = document.querySelectorAll('.donate__sel input');
@@ -44,6 +47,7 @@ export const selectFunc = () => {
       curOptions.classList.add('active');
 
       tab.classList.remove('curChoosing');
+      document.querySelector('.donate__sum.error')?.classList.remove('error');
     });
   });
 
@@ -62,6 +66,7 @@ export const selectFunc = () => {
         changeSum(radioBal, tab);
       }
     });
+    document.querySelector('.donate__sum.error')?.classList.remove('error');
   });
 };
 
@@ -82,6 +87,8 @@ export const changeTabFunc = () => {
       target.classList.add('active');
       tab.classList.add('active');
     }
+
+    document.querySelector('.donate__sum.error')?.classList.remove('error');
   });
 
   const copyBtsn = document.querySelectorAll('.donate__copy, .team__copy');
@@ -110,7 +117,56 @@ function changeSum(val, form) {
     'uk-UA'
   );
 
-  console.log(constsumVal);
-
   sum.value = formattedNumber;
+  document.querySelector('.donate__sum.error')?.classList.remove('error');
 }
+
+export const submitDonate = () => {
+  const forms = document.querySelectorAll('.donate__tab');
+
+  forms?.forEach(el => {
+    el.addEventListener('submit', sendForm);
+  });
+};
+
+const sendForm = async evt => {
+  evt.preventDefault();
+
+  const sumField = evt.target.querySelector('.donate__sum');
+  const sumVal = sumField.value;
+
+  if (sumVal === '') {
+    sumField.classList.add('error');
+  } else {
+    try {
+      const response = await sendToWFP(evt);
+      console.log(response.data);
+      const sign = response.data.signature;
+      const amount = response.data.amount;
+      evt.target.querySelector('[name="merchantSignature"]').value = sign;
+      evt.target.querySelector('[name="productPrice[]"]').value = amount;
+      evt.target.querySelector('[name="amount"]').value = amount;
+      evt.target.submit();
+    } catch (error) {
+      console.error('Помилка при відправці форми:', error);
+    }
+  }
+};
+
+const sendToWFP = async evt => {
+  const url = '/wp-admin/admin-ajax.php';
+  const formData = new FormData(evt.target);
+  formData.append('action', 'checkAuthWDP');
+
+  try {
+    const response = await axios.post(url, formData);
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      throw new Error('Помилка HTTP: ' + response.status);
+    }
+  } catch (error) {
+    console.error('Помилка при відправці до сервера:', error);
+    throw error; // Передача помилки для обробки вище
+  }
+};

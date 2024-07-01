@@ -2,13 +2,12 @@
     min-height: 56.875rem;
     padding-top: 4rem;
     display: flex;
-    align-items: center;
-    align-content: center;
     position: relative;
 }
 
 .about__content {
     max-width: 37.5rem;
+    padding-top: 11rem;
 }
 
 .about__right {
@@ -40,6 +39,7 @@
     .about__content {
         max-width: inherit;
         position: relative;
+        padding-top: 0;
         z-index: 2;
     }
     .about__right {
